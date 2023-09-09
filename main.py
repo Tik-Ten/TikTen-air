@@ -20,6 +20,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Software information:
+background-color: #120248;
+text-color: #657beb;
 """
 
 # Import library
@@ -28,6 +32,8 @@ from tkinter import *
 # Create values
 root = Tk()
 
+# Root options
+root.config(bg="#120248")
 root.resizable(False,False)
 root.title("TikTen air")
 root.geometry("800x500")
