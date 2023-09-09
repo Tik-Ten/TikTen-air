@@ -25,16 +25,39 @@ Software information:
 background-color: #120248;
 text-color: #657beb;
 """
-
 # Import library
 from tkinter import *
+from PIL import ImageTk, Image  
 
-# Create values
-root = Tk()
+def Internet_connected():
+    # Create values
+    root = Tk()
+    canvas= Canvas(root, width=700, height=400)
+    canvas.pack()
 
-# Root options
-root.config(bg="#120248")
-root.resizable(False,False)
-root.title("TikTen air")
-root.geometry("800x500")
-root.mainloop()
+    # Load an image in the script
+    img= ImageTk.PhotoImage(Image.open("Files\Images\Server images\server 4.png"))
+
+    # Add image to the Canvas Items
+    canvas.create_image(10,10,anchor=NW,image=img)
+
+    # Root options
+    root.config(bg="#120248")
+    root.resizable(False,False)
+    root.title("TikTen air")
+    root.geometry("800x500")
+    root.mainloop()
+def Internet_not_connected():
+    root = Tk()
+
+    root.title("Internet connection lost!")
+    root.resizable(False,False)
+    root.geometry("300x300")
+    root.mainloop()
+
+import requests
+try:
+    response = requests.get("https://www.google.com/", timeout=5)
+    Internet_connected()
+except requests.ConnectionError:
+    Internet_not_connected()
