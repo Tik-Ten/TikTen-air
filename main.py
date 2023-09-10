@@ -34,6 +34,7 @@ def Internet_connected():
     root = Tk()
     canvas= Canvas(root, width=700, height=400)
     canvas.pack()
+    icon_img = PhotoImage(file=r"Files\Images\Server images\server 7.png")
 
     # Load an image in the script
     img= ImageTk.PhotoImage(Image.open("Files\Images\Server images\server 4.png"))
@@ -42,6 +43,7 @@ def Internet_connected():
     canvas.create_image(10,10,anchor=NW,image=img)
 
     # Root options
+    root.iconphoto(False, icon_img)
     root.config(bg="#120248")
     root.resizable(False,False)
     root.title("TikTen air")
@@ -49,11 +51,13 @@ def Internet_connected():
     root.mainloop()
 def Internet_not_connected():
     root = Tk()
+    icon_img = PhotoImage(file=r"Files\Images\Server images\server 7.png")
     Label(root, text="Interbet connection lost!", bg="white", fg="black", font=("", 15)).place(relx=0.15, rely=0.2)
     Label(root, text="Please Check Your Internet", bg="white", fg="black", font=("", 12)).place(relx=0.18, rely=0.30)
     Label(root, text="Connection And Try Again", bg="white", fg="black", font=("", 12)).place(relx=0.18, rely=0.4)
     Label(root, text="Later.", bg="white", fg="black", font=("", 12)).place(relx=0.40, rely=0.48)
     root.title("Internet connection lost!")
+    root.iconphoto(False, icon_img)
     root.resizable(False,False)
     root.geometry("300x300")
     root.config(bg="white")
