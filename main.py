@@ -49,10 +49,14 @@ def Internet_connected():
     root.mainloop()
 def Internet_not_connected():
     root = Tk()
-
+    Label(root, text="Interbet connection lost!", bg="white", fg="black", font=("", 15)).place(relx=0.15, rely=0.2)
+    Label(root, text="Please Check Your Internet", bg="white", fg="black", font=("", 12)).place(relx=0.18, rely=0.30)
+    Label(root, text="Connection And Try Again", bg="white", fg="black", font=("", 12)).place(relx=0.18, rely=0.4)
+    Label(root, text="Later.", bg="white", fg="black", font=("", 12)).place(relx=0.40, rely=0.48)
     root.title("Internet connection lost!")
     root.resizable(False,False)
     root.geometry("300x300")
+    root.config(bg="white")
     root.mainloop()
 
 import requests
