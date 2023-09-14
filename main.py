@@ -27,20 +27,15 @@ text-color: #657beb;
 """
 # Import library
 from tkinter import *
-from PIL import ImageTk, Image  
+import webview
 
 def Internet_connected():
     # Create values
     root = Tk()
-    icon_img = PhotoImage(file=r"Files\Images\Server images\server 7.png")
-
+    webview.create_window('TikTen Air', 'https://www.tiktenair.ir')
+    webview.start()
     # Root options
-    root.iconphoto(False, icon_img)
-    root.config(bg="#120248")
-    root.resizable(False,False)
-    root.title("TikTen air")
     root.geometry("800x500")
-    root.mainloop()
 def Internet_not_connected():
     root = Tk()
     icon_img = PhotoImage(file=r"Files\Images\Server images\server 7.png")
@@ -57,7 +52,7 @@ def Internet_not_connected():
 
 import requests
 try:
-    response = requests.get("https://www.google.com/", timeout=5)
+    response = requests.get("https://www.tiktenair.ir/", timeout=1)
     Internet_connected()
 except requests.ConnectionError:
     Internet_not_connected()
