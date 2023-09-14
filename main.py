@@ -32,15 +32,7 @@ from PIL import ImageTk, Image
 def Internet_connected():
     # Create values
     root = Tk()
-    canvas= Canvas(root, width=700, height=400)
-    canvas.pack()
     icon_img = PhotoImage(file=r"Files\Images\Server images\server 7.png")
-
-    # Load an image in the script
-    img= ImageTk.PhotoImage(Image.open("Files\Images\Server images\server 4.png"))
-
-    # Add image to the Canvas Items
-    canvas.create_image(10,10,anchor=NW,image=img)
 
     # Root options
     root.iconphoto(False, icon_img)
